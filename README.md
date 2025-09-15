@@ -14,3 +14,15 @@ Here are some ideas to get you started:
 - 😄 Pronouns: ...
 - ⚡ Fun fact: ...
 -->
+# Portfolio
+
+This is a simple portfolio website structure.
+
+## Structure
+- `index.html`: Main HTML file
+- `styles.css`: Stylesheet
+- `script.js`: JavaScript file
+- `assets/`: Folder for images and favicon
+
+## Usage
+Add your project images to the `assets/` folder and update `index.html` as needed.
