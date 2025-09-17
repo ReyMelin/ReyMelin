@@ -1,10 +1,10 @@
-// Dark mode toggle
-const toggleBtn = document.getElementById('theme-toggle');
-const body = document.body;
+const phrases = ["modern websites", "responsive UIs", "smooth experiences"];
+let i = 0;
+const el = document.getElementById("changing-text");
 
-toggleBtn.addEventListener('click', () => {
-  body.classList.toggle('dark');
-  toggleBtn.innerHTML = body.classList.contains('dark')
-    ? '<i class="fas fa-sun"></i>'
-    : '<i class="fas fa-moon"></i>';
-});
+function changeText() {
+  el.textContent = phrases[i];
+  i = (i + 1) % phrases.length;
+}
+setInterval(changeText, 2000);
+changeText();

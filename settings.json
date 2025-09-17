@@ -1,0 +1,23 @@
+{
+  "recommendations": [
+    "ritwickdey.liveserver",
+    "esbenp.prettier-vscode",
+    "dbaeumer.vscode-eslint",
+    "bradlc.vscode-tailwindcss",
+    "naumovs.color-highlight",
+    "kisstkondoros.vscode-codemetrics",
+    "ecmel.vscode-html-css",
+    "pranaygp.vscode-css-peek",
+    "christian-kohler.path-intellisense",
+    "formulahendry.auto-rename-tag",
+    "coenraads.bracket-pair-colorizer",
+    "github.copilot",
+    "msjsdiag.debugger-for-chrome",
+    "humao.rest-client"
+  ],
+  "liveServer.settings.root": "/workspaces/ReyMelin",
+  "liveServer.settings.wait": 500,
+  "liveServer.settings.NoBrowser": false,
+  "liveServer.settings.CustomBrowser": "chrome",
+  "liveServer.settings.open": "index.html"
+}
