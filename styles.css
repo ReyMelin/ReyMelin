@@ -30,7 +30,9 @@ body {
   z-index: 1000;
   backdrop-filter: blur(10px);
 }
-.logo {
+header img {
+  display: inline;
+  max-width: 150px;
   font-size: 1.5rem;
   font-weight: bold;
 }
