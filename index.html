@@ -3,17 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Frontend Developer | Reymelin</title>
+  <title>Rey Melin | Frontend Developer</title>
+  <link rel="icon" type="image/x-icon" href="img/Black Logo.png" />
   <link rel="stylesheet" href="styles.css" />
   <script defer src="script.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
+
   <!-- Header -->
   <header class="header">
-    <div class="logo">Reymelin
-      <img src="img/Black Logo.png" alt="Reymelin Logo">
-    </div>
+    <div class="logo">ReyMelin</div>
+    <img src="img/Black Logo.png" alt="Rey Melin Logo" class="header-logo" />
     <nav class="nav">
       <a href="#projects">Projects</a>
       <a href="#about">About</a>
@@ -23,8 +24,10 @@
 
   <!-- Hero -->
   <section class="hero">
-    <h1 class="hero-text">I build <span id="changing-text"></span></h1>
-    <p class="sub-text">Sleek, modern, and functional web experiences</p>
+    <div class="hero-content">
+      <h1 class="hero-text">I build <span id="changing-text"></span></h1>
+      <p class="sub-text">Sleek, modern, and functional web experiences</p>
+    </div>
   </section>
 
   <!-- Projects -->
@@ -32,23 +35,29 @@
     <h2>Projects</h2>
     <div class="project-grid">
       <div class="card">
+        <img src="project1.jpg" alt="Project One screenshot">
         <h3>Project One</h3>
         <p>Brief description of project.</p>
+        <a href="#" class="btn">View Project</a>
       </div>
       <div class="card">
+        <img src="project2.jpg" alt="Project Two screenshot">
         <h3>Project Two</h3>
         <p>Brief description of project.</p>
+        <a href="#" class="btn">View Project</a>
       </div>
       <div class="card">
+        <img src="project3.jpg" alt="Project Three screenshot">
         <h3>Project Three</h3>
         <p>Brief description of project.</p>
+        <a href="#" class="btn">View Project</a>
       </div>
     </div>
   </section>
 
   <!-- About -->
   <section id="about" class="about">
-    <img src="headshot.jpg" alt="Your Headshot" class="headshot">
+    <img src="headshot.jpg" alt="Headshot of Rey Melin" class="headshot">
     <div>
       <h2>About Me</h2>
       <p>
@@ -57,6 +66,9 @@
         I focus on building engaging, user-friendly interfaces that combine
         creativity with functionality.
       </p>
+      <p>
+        Skills: HTML, CSS, JavaScript, React, responsive design, and UI/UX fundamentals.
+      </p>
     </div>
   </section>
 
@@ -64,10 +76,18 @@
   <section id="contact" class="contact">
     <h2>Let’s Connect</h2>
     <div class="contact-links">
-      <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
-      <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
-      <a href="mailto:you@example.com"><i class="fas fa-envelope"></i></a>
-      <a href="https://reymelin.com" target="_blank"><i class="fas fa-globe"></i></a>
+      <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn">
+        <i class="fab fa-linkedin"></i>
+      </a>
+      <a href="https://github.com" target="_blank" aria-label="GitHub">
+        <i class="fab fa-github"></i>
+      </a>
+      <a href="mailto:you@example.com" aria-label="Email">
+        <i class="fas fa-envelope"></i>
+      </a>
+      <a href="https://reymelin.com" target="_blank" aria-label="Portfolio">
+        <i class="fas fa-globe"></i>
+      </a>
     </div>
   </section>
 </body>
