@@ -1,9 +1,9 @@
 :root {
-  --blue-dark: #1e3a8a;
+  --blue-dark: #162242;
   --blue-light: #3b82f6;
-  --text-black: #171f30;
-  --grey-dark: #171f30;
-  --grey-light: #374151;
+  --text-black: #14151a;
+  --grey-dark: #333846;
+  --grey-light: #4e5f79;
   --text-white: #c6c7c9;
 }
 
@@ -17,7 +17,7 @@
 }
 
 body {
-  background: linear-gradient(135deg, var(--grey-dark), var(--blue-dark));
+  background: linear-gradient(135deg, var(--grey-dark), var(--grey-light));
   color: var(--text-white);
   line-height: 1.6;
 }
@@ -31,7 +31,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: rgba(17, 24, 39, 0.6);
+  background: var(--blue-dark);
   z-index: 1000;
   transition: background 0.3s ease;
 }
@@ -48,10 +48,6 @@ body {
   opacity: 0.7;
   transition: height 0.7s ease, opacity 0.5s ease;
 }
-.header-logo.scrolled {
-  height: 90px;
-  width: auto;
-}
 
 .nav a {
   margin: 1rem 1rem 1rem 1rem;
@@ -63,12 +59,16 @@ body {
   border-color: var(--text-white);
   border-style: solid;
   border-width: 1px;
-  transition: color 0.3s ease;
+  transition: color 0.5s ease;
 }
 .nav a:hover {
   box-shadow: 0 0 8px 3px rgba(248, 246, 246, 0.25);
   padding: 0.75rem 0.75rem;
+  transition-timing-function: ease-in-out;
+  transition-duration: 0.3s;
+  transition-property: padding;
 }
+
 
 /* Hero */
 .hero {
@@ -84,7 +84,7 @@ body {
 @media (max-width: 700px) {
   .nav {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
       gap: 4px;
   }
@@ -118,8 +118,8 @@ body {
   .hamburger span {
     display: block;
     width: 28px;
-    height: 4px;
-    margin: 4px 0;
+    height: 2px;
+    margin: 3px 0;
     background: var(--text-white);
     border-radius: 2px;
     transition: 0.3s;
@@ -128,7 +128,7 @@ body {
     display: none;
     flex-direction: column;
     align-items: center;
-    position: absolute;
+    position: sticky;
     top: 60px;
     left: 0;
     width: 100vw;
@@ -138,6 +138,11 @@ body {
   }
   .nav.open {
     display: flex;
+    align-content: flex-end;
+    max-width: 100px;
+    top: 100px;
+    right: 0;
+    left: auto;
   }
   .nav a {
     margin: 0.5rem 0;
@@ -146,8 +151,13 @@ body {
     width: 90%;
     text-align: center;
   }
+
+.header.scrolled nav {
+  height: 70px;
+}
+
   .header-logo {
-    height: 90px;
+    height: 150px;
   }
 }
 .hero-text {
@@ -156,8 +166,8 @@ body {
 #changing-text {
   color: var(--blue-light);
 }
+
 .sub-text {
-  margin-top: 1rem;
   font-size: 1.2rem;
   opacity: 0.8;
 }
@@ -166,9 +176,73 @@ body {
 .projects {
   padding: 5rem 5% 3rem;
   text-align: center;
+  margin-bottom: 2rem;
 }
 .project-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 2rem; 
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  padding: 2rem 0;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2rem;
+  gap: 2rem;
+}
+
+
+/* Project card style matches nav buttons */
+.card {
+  background-color: var(--grey-dark);
+  color: var(--text-light);
+  border-radius: 5px;
+  border: 1px solid var(--text-white);
+  max-width: 300px;
+  box-shadow: 0 0 6px 2px rgba(248, 246, 246, 0.25);
+  padding: 1.5rem 1rem;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  }
+
+  .card p {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #0c0c0cec; /* blue-dark with opacity */
+    color: var(--text-white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    opacity: 0;
+    pointer-events: none;
+    border-radius: 5px;
+    padding: 1rem;
+    transition: opacity 0.3s;
+  }
+  .card:hover p,
+  .card:focus-within p {
+    opacity: 1;
+    pointer-events: auto;
+    text-align: left;
+  }
+
+.card:hover {
+  box-shadow: 0 0 8px 3px rgba(248, 246, 246, 0.25);
+  padding: 2rem 2rem;
+  transition-timing-function: ease-in-out;
+  transition-duration: 0.3s;
+  transition-property: padding;
+  transform: translateY(-4px) scale(1.03);
+}
+.card img {
+  max-width: 200px;
+  height: auto;
+  border-radius: 5px;
+  margin-bottom: 1rem;
 } 
