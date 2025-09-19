@@ -1,9 +1,12 @@
 :root {
   --blue-dark: #1e3a8a;
   --blue-light: #3b82f6;
-  --grey-dark: #111827;
+  --text-black: #171f30;
+  --grey-dark: #171f30;
   --grey-light: #374151;
+  --text-white: #c6c7c9;
 }
+
 
 * {
   margin: 0;
@@ -15,7 +18,7 @@
 
 body {
   background: linear-gradient(135deg, var(--grey-dark), var(--blue-dark));
-  color: white;
+  color: var(--text-white);
   line-height: 1.6;
 }
 
@@ -42,8 +45,7 @@ body {
   height: 250px;
   width: auto;
   margin-left: 1rem;
-
-  opacity: 0.6;
+  opacity: 0.7;
   transition: height 0.7s ease, opacity 0.5s ease;
 }
 .header-logo.scrolled {
@@ -52,17 +54,20 @@ body {
 }
 
 .nav a {
-  margin-left: .5rem;
-  margin-right: .5rem;
-  padding: 0.5rem 1rem;
+  margin: 1rem 1rem 1rem 1rem;
+  padding: 0.5rem 0.5rem;
   text-decoration: none;
-  color: white;
+  color: var(--text-light);
   background-color: var(--grey-light);
   border-radius: 5px;
+  border-color: var(--text-white);
+  border-style: solid;
+  border-width: 1px;
   transition: color 0.3s ease;
 }
 .nav a:hover {
-  color: var(--blue-light);
+  box-shadow: 0 0 8px 3px rgba(248, 246, 246, 0.25);
+  padding: 0.75rem 0.75rem;
 }
 
 /* Hero */
@@ -74,6 +79,76 @@ body {
   padding: 2rem;
   text-align: center;
   margin-top: 150px;
+}
+/* Responsive nav bar vertical stack */
+@media (max-width: 700px) {
+  .nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+      gap: 4px;
+  }
+  .header-logo {
+    height: 150px;
+    width: auto;
+    margin: 0;
+    opacity: 0.9;
+  }
+  .nav a {
+    width: 100%;
+      margin: 0.2rem 0;
+      text-align: center;
+      padding: 0.35rem 0.35rem;
+      font-size: 0.95rem;
+  }
+}
+@media (max-width: 400px) {
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1100;
+  }
+  .hamburger span {
+    display: block;
+    width: 28px;
+    height: 4px;
+    margin: 4px 0;
+    background: var(--text-white);
+    border-radius: 2px;
+    transition: 0.3s;
+  }
+  .nav {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100vw;
+    background: rgba(17, 24, 39, 0.98);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.18);
+    z-index: 1099;
+  }
+  .nav.open {
+    display: flex;
+  }
+  .nav a {
+    margin: 0.5rem 0;
+    padding: 0.5rem 0;
+    font-size: 1.1rem;
+    width: 90%;
+    text-align: center;
+  }
+  .header-logo {
+    height: 90px;
+  }
 }
 .hero-text {
   font-size: 2.8rem;
@@ -95,4 +170,5 @@ body {
 .project-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 2rem;
+  gap: 2rem; 
+} 
